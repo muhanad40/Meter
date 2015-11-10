@@ -17,6 +17,7 @@ body {
 	float: none;
 	padding: 35px;
 	text-align: center;
+	position: relative;
 	@include transition(border-color .3s $ease-out-quad);
 	&:hover {
 		border: 2px solid $orange-primary;
@@ -29,22 +30,45 @@ body {
 	}
 	.meter {
 		&__value {
-
+			font-size: 62px;
+			position: absolute;
+			top: 35px;
+			left: 0;
+			width: 100%;
 		}
 		&__min {
-
+			left: 19px;
 		}
 		&__max {
-
+			right: 19px;
+		}
+		&__min,
+		&__max {
+			font-size: 22px;
+			position: absolute;
+			top: 220px;
+			text-align: center;
+			width: 65px;
 		}
 		&__pointer {
-
+			position: absolute;
+			top: 206px;
+			font-size: 16px;
+			text-align: center;
+			width: 120px;
+			padding-top: 1px;
+			left: 42px;
+			background: $grey-dark;
+			@include transform(rotate(35deg));
+			@include transform-origin(103px 7px);
 		}
 		&__scale {
-
+			margin-top: 80px;
+			font-size: 100px;
 		}
 	}
 	.refresh-button {
+		margin-top: 60px;
 		padding: 10px;
 		display: block;
 		width: 100%;
