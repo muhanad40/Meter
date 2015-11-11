@@ -105,6 +105,14 @@ describe("Getting the min and max values of a given meter data based on format",
     expect(meterLogic.getMaxValue(testData.EUR)).toEqual("€200")
   )
 
+  it("should return the 'min' value in CHF for CHF format", ->
+    expect(meterLogic.getMinValue(testData.CHF)).toEqual("0 CHF")
+  )
+
+  it("should return the 'max' value in CHF for CHF format", ->
+    expect(meterLogic.getMaxValue(testData.CHF)).toEqual("200 CHF")
+  )
+
   it("should return the 'min' value for a non-currency value", ->
     expect(meterLogic.getMinValue(testData.UNKNOWN)).toEqual(0)
   )
