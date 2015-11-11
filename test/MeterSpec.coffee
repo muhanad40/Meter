@@ -26,6 +26,18 @@ testData = {
     "format": "currency",
     "unit": "EUR"
   }
+  CHF: {
+    "value": 34,
+    "min": 0,
+    "max": 200,
+    "format": "currency",
+    "unit": "CHF"
+  }
+  DIFF_RANGE: {
+    "value": 153,
+    "min": 53,
+    "max": 436
+  }
   UNKNOWN: {
     "value": 34,
     "min": 0,
@@ -59,6 +71,10 @@ describe("Getting the meter value according to given data", ->
 
   it("should return the value as is for non-currency values", ->
     expect(meterLogic.getValue(testData.UNKNOWN)).toEqual(34)
+  )
+
+  it("should return the value in CHF format", ->
+    expect(meterLogic.getValue(testData.CHF)).toEqual("34 CHF")
   )
 
 )
@@ -102,7 +118,7 @@ describe("Getting the min and max values of a given meter data based on format",
 describe("Pointer rotation degree caculation", ->
 
   it("should calculate rotation degree based on given data", ->
-    expect(meterLogic.calculatePointerDegrees(testData.GBP)).toEqual(30.6)
+    expect(meterLogic.calculatePointerDegrees(testData.DIFF_RANGE)).toEqual(71)
   )
 
   it("should not exceed the max value", ->
