@@ -52,3 +52,39 @@ describe("Getting the meter value according to given data", ->
   )
 
 )
+
+describe("Getting the min and max values of a given meter data based on format", ->
+
+  it("should return the 'min' value in GBP for GBP format", ->
+    expect(meterLogic.getMinValue(testData.GBP)).toEqual("&pound;0")
+  )
+
+  it("should return the 'max' value in GBP for GBP format", ->
+    expect(meterLogic.getMaxValue(testData.GBP)).toEqual("&pound;200")
+  )
+
+  it("should return the 'min' value in USD for USD format", ->
+    expect(meterLogic.getMinValue(testData.USD)).toEqual("$0")
+  )
+
+  it("should return the 'max' value in USD for USD format", ->
+    expect(meterLogic.getMaxValue(testData.USD)).toEqual("$200")
+  )
+
+  it("should return the 'min' value in EUR for EUR format", ->
+    expect(meterLogic.getMinValue(testData.EUR)).toEqual("€0")
+  )
+
+  it("should return the 'max' value in EUR for EUR format", ->
+    expect(meterLogic.getMaxValue(testData.EUR)).toEqual("€200")
+  )
+
+  it("should return the 'min' value for a non-currency value", ->
+    expect(meterLogic.getMinValue(testData.UNKNOWN)).toEqual(0)
+  )
+
+  it("should return the 'max' value for a non-currency value", ->
+    expect(meterLogic.getMaxValue(testData.UNKNOWN)).toEqual(200)
+  )
+
+)
