@@ -9,7 +9,7 @@ currencySymbols = {
   }
   EUR: {
     type: "prepend"
-    symbol: "€"
+    symbol: "&euro;"
   }
   CHF: {
     type: "append"
