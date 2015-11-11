@@ -19,12 +19,18 @@ Meter = React.createClass
   getValue: ->
     return MeterLogic.getValue(@state.DataStore.data)
 
+  getMinValue: ->
+    return MeterLogic.getMinValue(@state.DataStore.data)
+
+  getMaxValue: ->
+    return MeterLogic.getMaxValue(@state.DataStore.data)
+
   render: ->
     return (
       <div className="meter">
         <div className="meter__value" dangerouslySetInnerHTML={{__html: @getValue()}}></div>
-        <div className="meter__min">0</div>
-        <div className="meter__max">200</div>
+        <div className="meter__min" dangerouslySetInnerHTML={{__html: @getMinValue()}}></div>
+        <div className="meter__max" dangerouslySetInnerHTML={{__html: @getMaxValue()}}></div>
         <div className="meter__pointer icon-pointer"></div>
         <div className="meter__scale icon-scale"></div>
       </div>
