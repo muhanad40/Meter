@@ -38,9 +38,9 @@ module.exports = {
 
   calculatePointerDegrees: (data)->
     if data.value > data.max
-      return data.max
+      return 180
     else if data.value < data.min
-      return data.min
+      return 0
     percentage = (data.value / data.max) * 100
     degrees = (percentage / 100) * 180
     return degrees

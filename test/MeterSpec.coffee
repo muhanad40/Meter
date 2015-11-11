@@ -106,11 +106,11 @@ describe("Pointer rotation degree caculation", ->
   )
 
   it("should not exceed the max value", ->
-    expect(meterLogic.calculatePointerDegrees(testData.TOO_MUCH)).toEqual(200)
+    expect(meterLogic.calculatePointerDegrees(testData.TOO_MUCH)).toEqual(180)
   )
 
   it("should not go below the min value", ->
-    expect(meterLogic.calculatePointerDegrees(testData.TOO_LITTLE)).toEqual(10)
+    expect(meterLogic.calculatePointerDegrees(testData.TOO_LITTLE)).toEqual(0)
   )
 
 )
