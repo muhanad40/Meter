@@ -16,6 +16,8 @@ Here is a list of improvements I would make if I had more time on this:
 - Fix: refresh request works on the second attempt. Needs more investigation
 - The CHF currency is large and needs styling to change without affecting the design. Possibly make it smaller in size
 
+**NOTE:** Tested with Node v0.12.5
+
 After you clone the repository, follow these steps:
 
 Project setup
