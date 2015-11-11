@@ -11,22 +11,28 @@ module.exports = {
       return true
     else
       return false
+
+  _getCurrencySymbol: (unit)->
+    if currencySymbols.hasOwnProperty(unit)
+      return currencySymbols[unit]
+    else
+      return false
   
   getValue: (data)->
     if @_isCurrencyFormat(data)
-      return currencySymbols[data.unit] + data.value
+      return @_getCurrencySymbol(data.unit) + data.value
     else
       return parseInt(data.value)
   
   getMinValue: (data)->
     if @_isCurrencyFormat(data)
-      return currencySymbols[data.unit] + data.min
+      return @_getCurrencySymbol(data.unit) + data.min
     else
       return parseInt(data.min)
   
   getMaxValue: (data)->
     if @_isCurrencyFormat(data)
-      return currencySymbols[data.unit] + data.max
+      return @_getCurrencySymbol(data.unit) + data.max
     else
       return parseInt(data.max)
 
