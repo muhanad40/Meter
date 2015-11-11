@@ -2,7 +2,7 @@ Meter
 -----
 This is a small exercise with React that shows a meter with data.
 
-![Meter](https://raw.githubusercontent.com/muhanad40/Meter/develop/screenshot.png)
+![Meter](https://raw.githubusercontent.com/muhanad40/Meter/master/screenshot.png)
 
 Future improvements
 -------------------
