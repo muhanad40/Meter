@@ -33,7 +33,7 @@ testData = {
   }
 }
 
-describe("Getting the meter value according to give data", ->
+describe("Getting the meter value according to given data", ->
 
   it("should return the value in GBP format", ->
     expect(meterLogic.getValue(testData.GBP)).toEqual("&pound;34")
@@ -47,8 +47,8 @@ describe("Getting the meter value according to give data", ->
     expect(meterLogic.getValue(testData.EUR)).toEqual("€34")
   )
 
-  it("should return 'false' for an unknown currency", ->
-    expect(meterLogic.getValue(testData.UNKNOWN)).toEqual(false)
+  it("should return the value as is for non-currency values", ->
+    expect(meterLogic.getValue(testData.UNKNOWN)).toEqual(34)
   )
 
 )

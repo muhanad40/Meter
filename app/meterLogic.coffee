@@ -10,6 +10,6 @@ module.exports = {
     if data.format != undefined and data.format == "currency" and currencySymbols.hasOwnProperty(data.unit)
       return currencySymbols[data.unit] + data.value
     else
-      return false
+      return data.value
 
 }
