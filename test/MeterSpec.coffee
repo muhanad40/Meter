@@ -31,6 +31,16 @@ testData = {
     "min": 0,
     "max": 200
   }
+  TOO_MUCH: {
+    "value": 351,
+    "min": 0,
+    "max": 200
+  }
+  TOO_LITTLE: {
+    "value": 1,
+    "min": 10,
+    "max": 200
+  }
 }
 
 describe("Getting the meter value according to given data", ->
@@ -85,6 +95,22 @@ describe("Getting the min and max values of a given meter data based on format",
 
   it("should return the 'max' value for a non-currency value", ->
     expect(meterLogic.getMaxValue(testData.UNKNOWN)).toEqual(200)
+  )
+
+)
+
+describe("Pointer rotation degree caculation", ->
+
+  it("should calculate rotation degree based on given data", ->
+    expect(meterLogic.calculatePointerDegrees(testData.GBP)).toEqual(30.6)
+  )
+
+  it("should not exceed the max value", ->
+    expect(meterLogic.calculatePointerDegrees(testData.TOO_MUCH)).toEqual(200)
+  )
+
+  it("should not go below the min value", ->
+    expect(meterLogic.calculatePointerDegrees(testData.TOO_LITTLE)).toEqual(10)
   )
 
 )

@@ -2,7 +2,8 @@ module.exports = {
   entry: "./entry.coffee",
   output: {
     path: __dirname + "/bundle",
-    filename: "bundle.js"
+    filename: "bundle.js",
+    publicPath: "/bundle/"
   },
   module: {
     loaders: [

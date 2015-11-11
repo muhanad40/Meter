@@ -25,13 +25,16 @@ Meter = React.createClass
   getMaxValue: ->
     return MeterLogic.getMaxValue(@state.DataStore.data)
 
+  calculatePointerDegrees: ->
+    return MeterLogic.calculatePointerDegrees(@state.DataStore.data)
+
   render: ->
     return (
       <div className="meter">
         <div className="meter__value" dangerouslySetInnerHTML={{__html: @getValue()}}></div>
         <div className="meter__min" dangerouslySetInnerHTML={{__html: @getMinValue()}}></div>
         <div className="meter__max" dangerouslySetInnerHTML={{__html: @getMaxValue()}}></div>
-        <div className="meter__pointer icon-pointer"></div>
+        <div className="meter__pointer icon-pointer" style={transform: "rotate(" + @calculatePointerDegrees() + "deg)"}></div>
         <div className="meter__scale icon-scale"></div>
       </div>
     )

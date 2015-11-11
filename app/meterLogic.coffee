@@ -36,4 +36,13 @@ module.exports = {
     else
       return parseInt(data.max)
 
+  calculatePointerDegrees: (data)->
+    if data.value > data.max
+      return data.max
+    else if data.value < data.min
+      return data.min
+    percentage = (data.value / data.max) * 100
+    degrees = (percentage / 100) * 180
+    return degrees
+
 }
