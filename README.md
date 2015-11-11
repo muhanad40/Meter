@@ -8,6 +8,7 @@ Future improvements
 -------------------
 Here is a list of improvements I would make if I had more time on this:
 
+- Refactor: Move the methods in `app/meterLogic.coffee` into the DataStore
 - Display a loading animation and fade out meter slightly as the data is bring fetched from the server
 - Disable the "Refresh" button temporarily when it's clicked
 - Correct the pointer icon so that rotation point can be corrected
