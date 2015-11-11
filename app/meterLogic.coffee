@@ -2,6 +2,7 @@ currencySymbols = {
   GBP: "&pound;"
   USD: "$"
   EUR: "€"
+  CHF: "CHF"
 }
 
 module.exports = {

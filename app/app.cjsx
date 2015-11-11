@@ -3,7 +3,7 @@ ReactDOM = require('react-dom')
 Meter = require("./components/Meter.cjsx")
 DataStore = require("./stores/DataStore.cjsx")
 Fluxxor = require("fluxxor")
-CartActions = require("./actions/MeterActions.cjsx")
+MeterActions = require("./actions/MeterActions.cjsx")
 
 FluxMixin = Fluxxor.FluxMixin(React)
 StoreWatchMixin = Fluxxor.StoreWatchMixin
@@ -20,7 +20,7 @@ App = React.createClass
 
   refreshMeter: (e)->
     e.preventDefault()
-    console.log 'refresh'
+    @getFlux().actions.refreshMeter()
 
   render: ->
     return (
@@ -35,7 +35,7 @@ stores = {
   DataStore: new DataStore()
 }
 
-flux = new Fluxxor.Flux(stores, CartActions);
+flux = new Fluxxor.Flux(stores, MeterActions);
 
 ReactDOM.render(
   <App flux={flux} />,

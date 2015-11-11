@@ -11,6 +11,22 @@ module.exports = Fluxxor.createStore(
       "format": "currency",
       "unit": "GBP"
     }
+    @bindActions(
+      MeterConstants.REFRESH_METER, @refreshMeter
+    )
+
+  refreshMeter: ->
+    request = new XMLHttpRequest();
+    request.onreadystatechange = (e) =>
+      if request.readyState != 4
+        return
+      if request.status == 200
+        @data = JSON.parse(request.responseText)
+      else
+        console.warn('error')
+    request.open('GET', 'https://widgister.herokuapp.com/challenge/frontend');
+    request.send();
+    @emit("change")
 
   getState: ->
     return {
